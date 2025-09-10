@@ -1,0 +1,392 @@
+---
+const sliders = [
+  {
+    title: "Experiencia comprobada",
+    description:
+      "Más de 10 años ayudando a empresas a mantener su contabilidad clara y precisa.",
+    image: "src/assets/Cards-1.webp",
+    checklist: [
+      "Asesoría personalizada según tu sector.",
+      "Cumplimiento riguroso de normativas fiscales.",
+      "Optimización de procesos contables para mayor eficiencia.",
+    ],
+  },
+  {
+    title: "Atención cercana y personalizada",
+    description:
+      "Cada cliente es único. Te acompaño en cada paso para que tengas tranquilidad financiera.",
+    image: "src/assets/Card-2.webp",
+    checklist: [
+      "Comunicación clara y sin tecnicismos.",
+      "Disponibilidad para resolver dudas rápidamente.",
+      "Relación basada en confianza y transparencia.",
+    ],
+  },
+  {
+    title: "Actualización constante",
+    description:
+      "Siempre al día con las últimas normas y tendencias contables y tributarias.",
+    image: "src/assets/Card-3.webp",
+    checklist: [
+      "Conocimiento actualizado en reformas tributarias.",
+      "Uso de herramientas tecnológicas modernas.",
+      "Adaptación rápida a cambios legales y financieros.",
+    ],
+  },
+  {
+    title: "Resultados que generan confianza",
+    description:
+      "Mi compromiso es que veas resultados claros en la gestión de tu contabilidad.",
+    image: "src/assets/Card-4.webp",
+    checklist: [
+      "Reportes financieros fáciles de interpretar.",
+      "Reducción de errores y riesgos tributarios.",
+      "Seguridad y confidencialidad garantizadas.",
+    ],
+  },
+];
+---
+
+<section id="services" class="slider-section">
+  <h2 class="fade-in-up">Por qué mi trabajo marca la <br />diferencia</h2>
+  <div class="property-tabs-menu fade-in-up">
+    <div class="tabs-block">
+      <div class="tabs-icon-wrapper">
+        <div class="tabs-icon-block">
+          <img
+            src="https://cdn.prod.website-files.com/67f5cf1c213e2087bf79445f/681f947600c3fb2ba4809bf3_Tabs%20Icon%201.svg"
+            loading="lazy"
+            alt=""
+            class="tab-icon"
+          />
+        </div>
+      </div><div>Confianza</div>
+    </div><div class="tabs-block">
+      <div class="tabs-icon-wrapper">
+        <div class="tabs-icon-block">
+          <img
+            src="https://cdn.prod.website-files.com/67f5cf1c213e2087bf79445f/681f9476cc8107b53e5d165a_Tabs%20Icon%202.svg"
+            loading="lazy"
+            alt=""
+            class="tab-icon"
+          />
+        </div>
+      </div><div>Eficiencia</div>
+    </div><div class="tabs-block">
+      <div class="tabs-icon-wrapper">
+        <div class="tabs-icon-block">
+          <img
+            src="https://cdn.prod.website-files.com/67f5cf1c213e2087bf79445f/681f9476abfd4602432c3afd_Tabs%20Icon%203.svg"
+            loading="lazy"
+            alt=""
+            class="tab-icon"
+          />
+        </div>
+      </div><div>Seguridad</div>
+    </div><div class="tabs-block">
+      <div class="tabs-icon-wrapper last">
+        <div class="tabs-icon-block">
+          <img
+            src="https://cdn.prod.website-files.com/67f5cf1c213e2087bf79445f/681f947608debf71a7510a33_Tabs%20Icon%204.svg"
+            loading="lazy"
+            alt=""
+            class="tab-icon"
+          />
+        </div>
+      </div><div>Innovación</div>
+    </div>
+  </div>
+  <div class="slider-container fade-in-up">
+    <div class="slider-wrapper">
+      {
+        sliders.map((slide) => (
+          <div class="slide">
+            <div class="slide-image">
+              <img src={slide.image} />
+            </div>
+            <div class="slide-content">
+              <h3 class="slide-title fade-in-up">{slide.title}</h3>
+              <p class="slide-description fade-in-up">{slide.description}</p>
+              <ul class="slide-checklist">
+                {slide.checklist.map((item) => (
+                  <li>
+                    <span class="checklist-icon">✔</span> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="slider-controls">
+      <div class="prev-arrow" role="button" tabindex="0">
+        <img
+          src="https://cdn.prod.website-files.com/67f5cf1c213e2087bf79445f/681f19f383255c95f1288c1c_Slider%20Left%20Arrow.svg"
+          loading="lazy"
+          alt=""
+        />
+      </div>
+      <div
+        class="next-arrow"
+        role="button"
+        tabindex="0"
+        aria-controls="w-slider-mask-1"
+        aria-label="next slide"
+      >
+        <img
+          src="https://cdn.prod.website-files.com/67f5cf1c213e2087bf79445f/681f1a071dbf5f26403370c6_Slider%20Right%20Arrow.svg"
+          loading="lazy"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .slider-section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-green);
+    padding: clamp(72px, 8vw, 140px) 20px;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+
+  h2 {
+    text-align: center;
+    color: var(--color-white);
+    margin: 0 20px;
+  }
+
+  .property-tabs-menu {
+    background-image: url("src/assets/line.svg");
+    background-position: 50% 35%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    justify-content: space-between;
+    align-self: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1111px;
+    display: flex;
+    margin: 80px 20px;
+  }
+  .tabs-block {
+    grid-column-gap: 18px;
+    grid-row-gap: 18px;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    color: var(--color-white);
+  }
+  .tabs-icon-wrapper {
+    justify-content: space-between;
+    display: flex;
+  }
+  .tabs-icon-block {
+    background-color: var(--color-white);
+    border: 1px solid #fff6;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 88px;
+    height: 88px;
+    display: flex;
+  }
+
+  .slider-container {
+    max-width: 1200px;
+    margin: 50px 2vw;
+    padding: 20px 0 20px 0;
+    background-color: var(--color-white);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .slider-wrapper {
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+    position: relative;
+  }
+
+  .slide {
+    display: flex;
+    align-items: center;
+    min-width: 100%;
+    gap: 4vw;
+    align-items: center;
+  }
+
+  .slide-image {
+    max-width: 620px;
+    padding-left: 20px;
+  }
+
+  .slide-image img {
+    height: auto;
+    border-radius: 20px;
+    width: 100%;
+  }
+
+  .slide-content {
+    max-width: 466px;
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding-right: 40px;
+    width: 80%;
+  }
+
+  .slide-title {
+    font-weight: var(--fw-bold);
+    color: var(--color-black);
+    margin-bottom: 15px;
+  }
+
+  .slide-description {
+    font-size: 16px;
+    color: var(--color-lg-grey);
+    margin-bottom: 20px;
+  }
+
+  .slide-checklist {
+    list-style: none;
+    padding: 0;
+  }
+
+  .slide-checklist li {
+    font-size: 16px;
+    color: var(--color-black);
+    font-weight: var(--fw-regular);
+    margin-bottom: 10px;
+  }
+
+  .checklist-icon {
+    color: var(--color-green);
+    font-size: 1.2em;
+    margin-right: 10px;
+  }
+
+  .slider-controls {
+    position: absolute;
+    bottom: 5vh;
+    right: 3vw;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    cursor: pointer;
+  }
+
+  .slider-controls img {
+    width: clamp(40px, 5vw, 56px);
+  }
+
+  @media screen and (max-width: 991px) {
+    .property-tabs-menu {
+      background-size: 90%;
+    }
+  }
+  @media (max-width: 890px) {
+    .slide {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .slide-image {
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .slide-content {
+      justify-content: flex-start;
+      padding: 0 20px;
+    }
+
+    .slide-description {
+      text-align: center;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .slider-container {
+      padding: 0 !important;
+    }
+    .property-tabs-menu {
+      background-position: 50% 25%;
+      background-size: 87%;
+    }
+    .tabs-block {
+      text-align: center;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .tabs-icon-block {
+      width: 56px;
+      height: 56px;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    .tabs-icon-block {
+      width: 48px;
+      height: 48px;
+      padding: 10px;
+    }
+    .tabs-block {
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .property-tabs-menu {
+      background-position: 50% 25%;
+      background-size: 89%;
+      background-attachment: scroll;
+      width: 88vw;
+    }
+    .slider-controls {
+      position: relative !important;
+      bottom: 1vh;
+      justify-content: end;
+    }
+  }
+  /* Ocultar las diapositivas no activas en móviles y tabletas */
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sliderContainer = document.querySelector(".slider-wrapper");
+    const slides = document.querySelectorAll(".slide");
+    const prevArrow = document.querySelector(".prev-arrow");
+    const nextArrow = document.querySelector(".next-arrow");
+
+    let currentSlideIndex = 0;
+    const totalSlides = slides.length;
+
+    // Función para mostrar la diapositiva actual
+    function showSlide(index) {
+      sliderContainer.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    // Manejar el clic en la flecha "siguiente"
+    nextArrow.addEventListener("click", () => {
+      currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+      showSlide(currentSlideIndex);
+    });
+
+    // Manejar el clic en la flecha "anterior"
+    prevArrow.addEventListener("click", () => {
+      currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlideIndex);
+    });
+
+    // Mostrar la primera diapositiva al cargar
+    showSlide(currentSlideIndex);
+  });
+</script>

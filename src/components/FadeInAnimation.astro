@@ -1,0 +1,24 @@
+---
+
+---
+
+<script is:client>
+  // Espera a que la página esté completamente cargada
+  window.addEventListener("load", () => {
+    const elements = document.querySelectorAll(".fade-in-up");
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show"); // activa animación
+            obs.unobserve(entry.target); // opcional: solo una vez
+          }
+        });
+      },
+      { threshold: 0.1 } // se activa cuando el 10% del elemento es visible
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>

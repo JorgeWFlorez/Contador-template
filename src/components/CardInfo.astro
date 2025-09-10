@@ -1,0 +1,240 @@
+---
+import Button from "./Button.astro";
+
+const slides = [
+  "src/assets/portrait.webp",
+  "src/assets/finance.webp",
+  "src/assets/portrait.webp",
+  "src/assets/finance.webp",
+];
+
+// número de bloques .logos-slide
+const blocks = 2;
+---
+
+<section id="benefits" class="section-cardinfo">
+  <div class="wrapper">
+    <div class="title-container fade-in-up">
+      <h2>Así potencio tus <br />finanzas</h2>
+      <Button />
+    </div>
+    <div class="info-container fade-in-up">
+      <div class="left-container">
+        <div class="left-up">
+          <img src="src/assets/book-open-svgrepo-com.svg" alt="" />
+          <h3>Actualización constante</h3>
+          <p>Siempre al día sobre cambios legales y fiscales.</p>
+        </div>
+        <div class="left-down">
+          <img src="src/assets/briefcase-svgrepo-com.svg" alt="" />
+          <h3>Casos prácticos</h3>
+          <p>
+            Domino conceptos tributarios con casos que reflejan la realidad
+            empresarial.
+          </p>
+        </div>
+      </div>
+      <div class="logos">
+        {
+          Array.from({ length: blocks }).map((_, i) => (
+            <div class="logos-slide" key={i}>
+              {slides.map((src, j) => (
+                <img src={src} alt={`logo-${i}-${j}`} />
+              ))}
+            </div>
+          ))
+        }
+      </div>
+      <div class="right-container">
+        <div class="right-up">
+          <img src="src/assets/tools-svgrepo-com.svg" alt="" />
+          <h3>Herramientas digitales</h3>
+          <p>
+            Utilizamos plantillas, guías y simuladores vanguardistas diseñados
+            para hacer tu gestión contable más eficiente.
+          </p>
+        </div>
+        <div class="right-down">
+          <img src="src/assets/live-chat-web-support-svgrepo-com.svg" alt="" />
+          <h3>Comunidad y soporte</h3>
+          <p>
+            Resuelve dudas, comparte experiencias y aprende de otros
+            profesionales en el área.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-cardinfo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: clamp(72px, 8vw, 140px) 0;
+  }
+
+  .wrapper {
+    max-width: 1600px;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+  }
+  .title-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: end;
+  }
+
+  .info-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 31px;
+    margin-top: 50px;
+    align-items: stretch;
+    height: 90vh;
+  }
+
+  .left-container img,
+  .right-container img {
+    width: 50px;
+  }
+
+  .left-container,
+  .right-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .left-up,
+  .left-down,
+  .right-up,
+  .right-down {
+    background-color: var(--color-grey);
+    padding: 30px;
+    border-radius: 21px;
+    flex: 1;
+  }
+  .info-container p {
+    color: var(--color-lg-grey);
+    font-size: 18px;
+  }
+  .logos {
+    width: 33%;
+  }
+
+  @keyframes slides {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+  .logos {
+    overflow: hidden;
+    padding: 60px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logos:before,
+  .logos:after {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    content: "";
+    z-index: 2;
+  }
+
+  .logos:before {
+    top: 0;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0), #fff);
+  }
+
+  .logos:after {
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+  }
+
+  .logos-slide {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    gap: 30px;
+    animation: 25s slides infinite linear;
+  }
+
+  .logos-slide img {
+    margin: 0 20px;
+    vertical-align: top;
+    display: inline-block;
+    border-radius: 16px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .wrapper {
+      width: 90%;
+      align-items: center;
+    }
+
+    .info-container {
+      height: 95vh;
+      gap: 0;
+      width: 80%;
+    }
+
+    .left-container img,
+    .right-container img {
+      width: 40px;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .info-container {
+      flex-direction: column;
+      align-items: center;
+      height: fit-content;
+      gap: 40px;
+    }
+
+    .left-container,
+    .right-container {
+      width: 100%;
+      flex-direction: row;
+    }
+
+    .logos {
+      width: 100%;
+      height: 90vh;
+    }
+
+    .logos-slide img {
+      margin: 0;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .info-container {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .left-container,
+    .right-container {
+      flex-direction: column;
+    }
+
+    .logos {
+      height: 50vh;
+    }
+  }
+</style>

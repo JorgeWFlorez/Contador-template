@@ -1,0 +1,213 @@
+---
+
+---
+
+<section id="experience" class="section-container">
+  <h2 class="fade-in-up">Por qué mi trabajo marca la diferencia</h2>
+
+  <div class="content-wrapper fade-in-up">
+    <!-- Images -->
+    <div class="images">
+      <img src="src/assets/finance.webp" alt="" />
+      <img src="src/assets/two-professional.webp" alt="" />
+    </div>
+    <!-- Text -->
+    <div class="text">
+      <div class="feature fade-in-up">
+        <img
+          loading="lazy"
+          src="https://cdn.prod.website-files.com/67f5cf1c213e2087bf79445f/681f1f189ab15169dd462d08_Testimonial%20Icon%204.svg"
+          alt=""
+        />
+        <div class="stepper-line"></div>
+        <div>
+          <h3>Diagnóstico financiero</h3>
+          <p>
+            Analizo el estado actual de tus finanzas para identificar <br /> fortalezas
+            y áreas de mejora.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature fade-in-up">
+        <img
+          src="https://cdn.prod.website-files.com/67f5cf1c213e2087bf79445f/681f1f18729aca6c7bf61d37_Testimonial%20Icon%202.svg"
+          loading="lazy"
+          alt=""
+        />
+        <div class="stepper-line"></div>
+        <div>
+          <h3>Organización contable</h3>
+          <p>
+            Clasifico y registro la información de manera clara y precisa,<br />
+            asegurando cumplimiento normativo.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature fade-in-up">
+        <img
+          src="https://cdn.prod.website-files.com/67f5cf1c213e2087bf79445f/681f1f181529fd586e139511_Testimonial%20Icon%203.svg"
+          loading="lazy"
+          alt=""
+        />
+        <div class="stepper-line"></div>
+        <div>
+          <h3>Optimización tributaria</h3>
+          <p>
+            Diseño estrategias para optimizar impuestos, siempre<br /> dentro del
+            marco legal.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature fade-in-up">
+        <img
+          src="https://cdn.prod.website-files.com/67f5cf1c213e2087bf79445f/681f1f18e4876126e5e1297f_Testimonial%20Icon%201.svg"
+          loading="lazy"
+          alt=""
+        />
+        <div class="stepper-line last"></div>
+        <div>
+          <h3>Reportes y acompañamiento</h3>
+          <p>
+            Presento informes claros y te brindo asesoría continua<br /> para una
+            mejor toma de decisiones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-container {
+    padding-top: clamp(72px, 8vw, 140px);
+    padding-bottom: clamp(72px, 8vw, 240px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    align-items: center;
+  }
+
+  h2 {
+    text-align: center;
+    width: 50%;
+  }
+
+  .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    gap: 22px;
+  }
+
+  .images {
+    position: relative;
+    width: 50%;
+  }
+  .images img {
+    width: clamp(250px, 25vw, 400px);
+    height: auto;
+    border-radius: 16px;
+  }
+
+  .images img:last-child {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+  }
+
+  /* Estilos de la columna de texto */
+  .text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 600px;
+  }
+
+  /* Estilos para cada "feature" */
+  .feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .stepper-line {
+    position: relative;
+    left: -54px;
+    top: 55px;
+    bottom: 0;
+    height: 95px;
+    border-left: 1px dashed var(--color-yellow);
+    z-index: 12;
+  }
+
+  .stepper-line.last {
+    border-left: 1px dashed transparent;
+  }
+
+  .feature h3 {
+    margin: 0 0 10px 0;
+    line-height: normal;
+    font-weight: var(--fw-medium);
+  }
+
+  .feature p {
+    font-size: 16px;
+    color: var(--color-lg-grey);
+  }
+
+  @media screen and (max-width: 1455px) {
+    .images {
+      margin-bottom: clamp(72px, 8vw, 140px);
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    .images img:last-child {
+      position: initial;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .images {
+      position: relative;
+      height: 300px;
+    }
+    .images img:first-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .images img:last-child {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    .stepper-line {
+      height: 140px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .images img:first-child,
+    .images img:last-child {
+      position: initial;
+    }
+
+    .images {
+      height: auto;
+      gap: 20px;
+    }
+    .stepper-line {
+      height: 200px;
+    }
+  }
+</style>

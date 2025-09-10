@@ -1,0 +1,82 @@
+---
+const slides = [
+  "src/assets/portrait.webp",
+  "src/assets/finance.webp",
+  "src/assets/portrait.webp",
+  "src/assets/finance.webp",
+];
+
+// número de bloques .logos-slide
+const blocks = 3;
+---
+
+<div class="logos">
+  {
+    Array.from({ length: blocks }).map((_, i) => (
+      <div class="logos-slide" key={i}>
+        {slides.map((src, j) => (
+          <img src={src} alt={`logo-${i}-${j}`} />
+        ))}
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .logos {
+    overflow: hidden;
+    padding: 60px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .logos:before,
+  .logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+
+  .logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+
+  .logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+
+  .logos-slide {
+    display: inline-block;
+    animation: 15s slide infinite linear;
+  }
+
+  .logos-slide img {
+    max-width: 360px;
+    margin: 0 20px;
+    vertical-align: top;
+    display: inline-block;
+    border-radius: 16px;
+  }
+
+  @media screen and (max-width: 900px) {
+    .logos:before,
+    .logos:after {
+      width: 0px;
+    }
+  }
+</style>

@@ -1,0 +1,194 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path
+              d="M18.266 26.068l7.839-7.854 4.469 4.479c1.859 1.859 1.859 4.875 0 6.734l-1.104 1.104c-1.859 1.865-4.875 1.865-6.734 0zM30.563 2.531l-1.109-1.104c-1.859-1.859-4.875-1.859-6.734 0l-6.719 6.734-6.734-6.734c-1.859-1.859-4.875-1.859-6.734 0l-1.104 1.104c-1.859 1.859-1.859 4.875 0 6.734l6.734 6.734-6.734 6.734c-1.859 1.859-1.859 4.875 0 6.734l1.104 1.104c1.859 1.859 4.875 1.859 6.734 0l21.307-21.307c1.859-1.859 1.859-4.875 0-6.734z"
+            ></path>
+          </svg>
+        </div>
+        <span class="brand-name">Sara Martínez</span>
+      </a>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-column">
+        <h3>Contacto</h3>
+        <ul>
+          <li>
+            <a href="mailto:tuemail@ejemplo.com">📧 sara.martinez@gmail.com</a>
+          </li>
+          <li>
+            <a href="https://wa.me/573117667279" target="_blank"
+              >📱 +57 311 7667279</a
+            >
+          </li>
+          <li><span>📍 Medellín, Colombia</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Enlaces utiles</h3>
+        <ul>
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#experience">Experiencia</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#benefits">Beneficios</a></li>
+          <li><a href="#reviews">Testimonios</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Redes Sociales</h3>
+        <div class="social-icons">
+          <a href="#" title="Facebook"><img src="src/assets/facebook.svg" /></a>
+          <a href="#" title="Facebook"><img src="src/assets/facebook.svg" /></a>
+          <a href="#" title="Facebook"><img src="src/assets/facebook.svg" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="footer-bottom">© 2012 Sara Martínez. All rights reserved.</div>
+
+<style>
+  .footer {
+    padding: 0 1rem;
+    background: var(--color-yellow);
+    color: #2d2d2d;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 0;
+  }
+
+  .footer-brand {
+    flex: 1;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--color-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: #fff;
+  }
+
+  .brand-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-black);
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    flex: 2;
+  }
+
+  .footer-links .footer-column:last-child {
+    text-align: center;
+  }
+
+  .footer-column h3 {
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-column ul li a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #333;
+  }
+
+  .footer-column ul li a:hover {
+    text-decoration: underline;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    color: #333;
+  }
+
+  .social-icons a img {
+    width: 2rem;
+    fill: currentColor;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #666;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--color-black);
+  }
+
+  /* ✅ Responsive */
+  @media (min-width: 1024px) {
+    .footer-container {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .footer-brand {
+      width: 33%;
+    }
+  }
+  @media (max-width: 500px) {
+    .footer-links a {
+      display: inline-block;
+      max-width: 100%;
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+  }
+</style>

@@ -1,0 +1,91 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="fade-in-up">Asesoría Contable <br />Profesional</h1>
+    <p>Experiencia, confianza y resultados claros para tu empresa.</p>
+    <Button style="margin-top:2rem" />
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background: url("src/assets/principal-banner.webp") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: -100px;
+    z-index: 1;
+  }
+
+  /* Overlay degradado */
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
+  }
+
+  /* Animacion */
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("src/assets/principal-banner.jpg") center center / cover
+      no-repeat;
+    transform: scale(1.1); /* zoom inicial */
+    animation: bgZoom 1.3s ease-out forwards;
+  }
+
+  /* contenido */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    margin-left: 5vw;
+  }
+
+  .hero h1 {
+    color: var(--color-white);
+  }
+
+  .hero p {
+    color: var(--color-white);
+    font-size: 20px;
+    opacity: 0;
+    transform: translateY(30vh);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .hero-content button {
+    margin-top: 10rem;
+  }
+
+  /*Animaciones*/
+
+  /*Banner zoom*/
+  @keyframes bgZoom {
+    to {
+      transform: scale(1); /* vuelve a tamaño normal */
+    }
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
